@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 
+
 enum city_limit {
 	min_city_num   = 1,
 	max_city_num   = 100,
@@ -13,10 +14,10 @@ enum city_limit {
 struct empire_info_t {
 	int city_num;
 
-	int *city_transfer_cost; /* The time required memory, 
-							  * format:2-1 3-1 3-2 4-1...... */
-	int *city_route;         /* City connection info, *	e.g. 3-1 
-							  *	city_route[CITY_POS(3)*2] = 3 city_route[CITY_POS(3)*2+1] = 1 */ 
+	int *city_transfer_cost; /* The time required memory,
+                              * format:2-1 3-1 3-2 4-1...... */
+	int *city_route;         /* City connection info, e.g. 3-1 
+                              * city_route[CITY_POS(3)*2] = 3 city_route[CITY_POS(3)*2+1] = 1 */ 
 	int *best_way;           /* Record the city message has been passed */
 	int *cur_city_min_cost;  /* Record minimum transfer cost from current city to other city */
 };
